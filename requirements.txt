@@ -1,0 +1,25 @@
+pandas
+pyarrow  # parquet I/O for embedding sidecars: 
+polars
+numpy
+matplotlib
+seaborn
+scikit-learn
+joblib
+lightgbm
+xgboost
+shap
+# Stage 2 (embeddings) talks to Snowflake's prequantized Arctic Embed v2.0
+# ONNX weights via onnxruntime + the HF tokenizer. No torch / sentence-
+# transformers / xformers needed. For GPU, replace `onnxruntime` with
+# `onnxruntime-gpu` (matching CUDA/cuDNN versions) and `OnnxArcticEncoder`
+# will auto-pick the fp16 weights.
+onnxruntime
+# Pinned < 5: transformers 5.x eagerly imports torch even just to expose
+# AutoTokenizer, which breaks this deliberately torch-free pipeline. 4.x keeps
+# the tokenizer path importable without torch / tensorflow / flax installed.
+transformers<5   # AutoTokenizer for the Arctic tokenizer
+huggingface_hub   # hf_hub_download for the ONNX weights file
+requests
+# snowflake-connector-python  # re-enable when the Snowflake ingestion path is wired in
+psutil
