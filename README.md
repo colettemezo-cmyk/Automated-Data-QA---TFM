@@ -1,4 +1,4 @@
-A project / master's thesis to automate the QA process. Initially on ODM (former FSA), later on DSM and CMI as well.
+A project / master's thesis to automate the QA process. Initially on ODM (former FSA), in the future maybe on DSM and CMI as well.
 
 ## ML pipeline (stage 4)
 
